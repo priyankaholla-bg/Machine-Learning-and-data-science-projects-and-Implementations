@@ -6,11 +6,11 @@ def reshape_matrix(a: list[list[int|float]], new_shape: tuple[int, int]) -> list
 	if row*col!=len(a)*len(a[0]):
 		return []
 
-	# flat_array = [element for sublist in a for element in sublist]
+	flat_array = [element for sublist in a for element in sublist]
     
-	# reshaped_matrix = [[0]*col for _ in range(row)]
-	# for i in range(row):
-	# 	for j in range(col):
-	# 		reshaped_matrix[i][j]=flat_array[i*col+j]
-	# return reshaped_matrix
-	return np.array(a).reshape(new_shape).tolist()
+	reshaped_matrix = [[0]*col for _ in range(row)]
+	for i in range(row):
+		for j in range(col):
+			reshaped_matrix[i][j]=flat_array[i*col+j]
+	return reshaped_matrix
+	# return np.array(a).reshape(new_shape).tolist()
